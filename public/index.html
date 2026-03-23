@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto-Director</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Hackathon Brief / The Auto-Director</p>
+          <h1>Turn one line into a cinematic storyboard feed.</h1>
+          <p class="lede">
+            A single prompt becomes a 3-act narrative, a 9-scene structure, and a visual
+            shot-by-shot reel with screenwriter, cinematographer, and visual artist passes.
+          </p>
+          <div class="mode-strip" id="modeStrip">
+            <span class="mode-pill">Text agent: checking</span>
+            <span class="mode-pill">Visual artist: checking</span>
+          </div>
+        </div>
+
+        <div class="prompt-card">
+          <label class="prompt-label" for="promptInput">Seed idea</label>
+          <textarea
+            id="promptInput"
+            rows="4"
+            spellcheck="false"
+            placeholder="A futuristic heist in a high-security vault."
+          ></textarea>
+
+          <div class="action-row">
+            <button id="generateBtn" class="primary-btn">Direct the story</button>
+            <button id="demoBtn" class="ghost-btn" type="button">Load example</button>
+          </div>
+
+          <p class="helper-copy">
+            Best prompts are short, vivid, and specific about the world or conflict.
+          </p>
+        </div>
+      </section>
+
+      <section class="status-panel" id="statusPanel" aria-live="polite">
+        <div class="status-dot"></div>
+        <p id="statusText">Waiting for a prompt.</p>
+      </section>
+
+      <section class="act-summary-shell hidden" id="actSummaryShell">
+        <div class="summary-head">
+          <p class="story-kicker">Idea -> Short Story</p>
+          <h2 class="summary-title">3-act expansion</h2>
+          <p class="summary-copy">
+            The one-line idea is first expanded into a simple beginning, middle, and ending.
+          </p>
+        </div>
+        <pre class="summary-code" id="actSummaryCode"></pre>
+      </section>
+
+      <section class="story-shell hidden" id="storyShell">
+        <header class="story-header" id="storyHeader"></header>
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </main>
+
+    <template id="actTemplate">
+      <article class="act-card">
+        <div class="act-head">
+          <p class="act-label"></p>
+          <h2 class="act-title"></h2>
+          <p class="act-summary"></p>
+        </div>
+        <div class="scene-stack"></div>
+      </article>
+    </template>
+
+    <template id="sceneTemplate">
+      <section class="scene-card">
+        <div class="scene-meta">
+          <p class="scene-label"></p>
+          <h3 class="scene-title"></h3>
+          <p class="scene-summary"></p>
+          <div class="scene-tags"></div>
+        </div>
+        <div class="shot-grid"></div>
+      </section>
+    </template>
+
+    <template id="shotTemplate">
+      <article class="shot-card">
+        <div class="shot-frame">
+          <img class="shot-image" alt="" loading="lazy" />
+          <div class="shot-overlay">
+            <p class="shot-framing"></p>
+            <h4 class="shot-title"></h4>
+          </div>
+        </div>
+        <div class="shot-copy">
+          <div class="shot-tags"></div>
+          <p class="shot-description"></p>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+  </html>
