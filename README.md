@@ -25,6 +25,7 @@ node --watch server.mjs
 ## Modes
 
 ### Demo mode
+For Demo video: https://drive.google.com/drive/folders/1kdUNRXmvomxfZwDPAEcBSiHBxJJC1WSI
 
 No API key required.
 
