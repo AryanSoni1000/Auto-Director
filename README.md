@@ -38,8 +38,6 @@ No API key required.
 Create a `.env` file in `/Users/avayaavijit/Downloads/TECH` based on [`.env.example`](/Users/avayaavijit/Downloads/TECH/.env.example):
 
 ```bash
-GEMINI_API_KEY=AIzaSyBCODeyoHEb5G0jSwTOxjx1AF2hQgBfjDY
-GEMINI_IMAGE_API_KEY=AIzaSyAMLxi3aoFzS7YZWa5vAfUFhtNbAv4EATk
 GEMINI_TEXT_MODEL=gemini-2.5-flash
 GEMINI_IMAGE_MODEL=gemini-2.5-flash-image
 GEMINI_IMAGE_MODE=live
