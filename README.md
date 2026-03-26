@@ -1,62 +1,77 @@
-# Auto-Director
+# 🎬 Auto-Director — AI Cinematic Storyboard Generator
 
-Auto-Director is a lightweight web app for the hackathon brief. It turns a one-line prompt into a 3-act cinematic storyboard feed with:
+Auto-Director is an AI-powered pre-production tool that converts a single-line idea into a complete cinematic storyboard.
+It transforms a simple prompt into a 3-act story, scene breakdown, shot list, and visual references — just like a real film planning pipeline.
 
-- a screenwriter pass
-- a cinematographer pass
-- a visual artist pass
+---
 
-The project runs with plain Node.js and no npm dependencies, so it works immediately in demo mode and can switch to live Gemini-powered story generation plus Gemini-powered image generation when an API key is available.
+## Live Link - https://auto-director-production-87a9.up.railway.app/
 
-## Run
+## Demo Video - 
 
-```bash
-node server.mjs
-```
+## 🚀 Features
 
-Then open [http://localhost:3000](http://localhost:3000).
+* Converts a **one-line idea** into a **3-act story structure**
+* Breaks story into **scenes and shot list**
+* Generates **cinematography directions** (camera, lighting, mood, color)
+* Fetches **visual references** using Unsplash API
+* Uses a **multi-agent pipeline**:
 
-For auto-reload while iterating:
+  * Screenwriter Agent → Story
+  * Cinematographer Agent → Scenes & Shots
+  * Visual Artist Agent → Images
+* Works in **Demo Mode** without API keys
+* Works in **Live Mode** using Gemini + Unsplash APIs
 
-```bash
-node --watch server.mjs
-```
+---
 
-## Modes
+## 🧠 How It Works (Architecture)
 
-### Demo mode
-For Demo video: https://drive.google.com/drive/folders/1kdUNRXmvomxfZwDPAEcBSiHBxJJC1WSI
+Idea / Prompt
+↓
+Screenwriter Agent (Story Generation)
+↓
+Cinematographer Agent (Scene + Shot Planning)
+↓
+Visual Artist Agent (Unsplash Images)
+↓
+Storyboard Feed (UI)
 
-No API key required.
+---
 
-- narrative generation uses a deterministic local fallback
-- visuals are generated as cinematic SVG poster frames
-- useful for local demos, UI work, and offline verification
+## 🛠 Tech Stack
 
-### Live mode
+* Frontend: HTML, CSS, JavaScript
+* Backend: Node.js
+* Story Generation: Gemini API
+* Visual References: Unsplash API
+* Architecture: Multi-agent pipeline
 
-Create a `.env` file in `/Users/avayaavijit/Downloads/TECH` based on [`.env.example`](/Users/avayaavijit/Downloads/TECH/.env.example):
+---
 
-```bash
-GEMINI_TEXT_MODEL=gemini-2.5-flash
-GEMINI_IMAGE_MODEL=gemini-2.5-flash-image
-GEMINI_IMAGE_MODE=live
-GEMINI_IMAGE_SIZE=1024x1536
-PORT=3000
-```
 
-- when `GEMINI_API_KEY` is present, the screenwriter and cinematographer run through the Gemini API with JSON schema output
-- when `GEMINI_IMAGE_API_KEY` is present and `GEMINI_IMAGE_MODE=live`, the visual artist generates real shot images through Google's image generation endpoint
-- the app can still fall back to poster visuals if live image generation is disabled or unavailable
+## 🎥 Example Prompts
 
-## Files
+* A thief trapped inside a smart building that starts hunting him.
+* A girl who can pause time but only for 10 seconds.
+* A robot that secretly paints dreams it sees in humans.
+* A time traveler trying to stop his own death.
 
-- [server.mjs](/Users/avayaavijit/Downloads/TECH/server.mjs): HTTP server, AI pipeline, poster generation
-- [public/index.html](/Users/avayaavijit/Downloads/TECH/public/index.html): app shell and templates
-- [public/styles.css](/Users/avayaavijit/Downloads/TECH/public/styles.css): cinematic feed styling
-- [public/app.js](/Users/avayaavijit/Downloads/TECH/public/app.js): client-side rendering and interactions
+---
 
-## Notes
+## 🎯 Use Cases
 
-- The app is intentionally dependency-light so it is easy to submit, inspect, and deploy.
-- If live Gemini text or Gemini image calls fail, the server automatically falls back instead of breaking the experience.
+* Film pre-production planning
+* Short film ideation
+* Storyboarding
+* Ad film planning
+* YouTube video planning
+* Creative writing
+
+---
+
+## 👨‍💻 Author
+
+Built by Aryan Soni
+
+---
