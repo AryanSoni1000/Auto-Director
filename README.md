@@ -5,7 +5,7 @@ It transforms a simple prompt into a 3-act story, scene breakdown, shot list, an
 
 ---
 
-## Live Link - https://auto-director-production-87a9.up.railway.app/
+## Live Link(Deployed on Railways App) - https://auto-director-production-87a9.up.railway.app/
 
 ## Demo Video - 
 
@@ -67,6 +67,14 @@ Storyboard Feed (UI)
 * Ad film planning
 * YouTube video planning
 * Creative writing
+
+## 🧠 What Makes This Project Unique
+
+- Multi-agent AI pipeline
+- Film pre-production automation
+- Story → Scene → Shot → Visual pipeline
+- Real-world creative workflow simulation
+- Fully deployed live AI application
 
 ---
 
