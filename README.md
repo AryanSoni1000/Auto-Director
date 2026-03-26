@@ -7,6 +7,8 @@ It transforms a simple prompt into a 3-act story, scene breakdown, shot list, an
 
 ## Live Link(Deployed on Railways App) - https://auto-director-production-87a9.up.railway.app/
 
+## Demo Video Link - https://drive.google.com/file/d/1oX9EMBH7a_Sc981zMnsB7Ro_AnQLPwEW/view?usp=sharing
+
 ## 🚀 Features
 
 * Converts a **one-line idea** into a **3-act story structure**
