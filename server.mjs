@@ -8,7 +8,7 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const publicDir = join(__dirname, "public");
 
 loadEnv();
-
+console.log("Gemini key loaded:", process.env.GEMINI_API_KEY);
 const PORT = Number(process.env.PORT || 3000);
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || "";
 const GEMINI_IMAGE_API_KEY = process.env.GEMINI_IMAGE_API_KEY || process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || "";
@@ -336,10 +336,9 @@ function getTextProvider() {
 }
 
 function getImageProvider() {
-  if (GEMINI_IMAGE_API_KEY && GEMINI_IMAGE_MODE === "live") {
-    return "gemini";
+  if (process.env.UNSPLASH_ACCESS_KEY) {
+    return "unsplash";
   }
-
   return null;
 }
 
@@ -497,14 +496,32 @@ async function renderShotVisuals({ seedPrompt, storyTitle, acts, useLiveImages }
   };
 }
 
-async function generateLiveImage({ seedPrompt, act, scene, shot }) {
-  const imageProvider = getImageProvider();
+async function getUnsplashImage(query) {
+  const accessKey = process.env.UNSPLASH_ACCESS_KEY;
 
-  if (imageProvider === "gemini") {
-    return generateGeminiImage({ seedPrompt, act, scene, shot });
+  const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=1&client_id=${accessKey}`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (data.results && data.results.length > 0) {
+    return {
+      type: "image",
+      src: data.results[0].urls.regular,
+      alt: query
+    };
   }
 
-  throw new ApiError(500, "No live image provider is configured.");
+  return {
+    type: "image",
+    src: "https://via.placeholder.com/400x600?text=No+Image",
+    alt: "No image found"
+  };
+}
+
+async function generateLiveImage({ act, scene, shot }) {
+  const query = `${scene.location} ${shot.title} cinematic ${shot.framing} dramatic lighting film still`;
+  return await getUnsplashImage(query);
 }
 
 async function generateGeminiImage({ seedPrompt, act, scene, shot }) {
@@ -726,7 +743,13 @@ function buildShots(seedPrompt, act, scene) {
 
   return templates.map((template, index) => ({
     shotNumber: index + 1,
-    ...template
+  shotDuration: "3 sec",
+  cameraLens: "50mm",
+  backgroundMusic: "Cinematic ambient",
+  colorGrade: "Teal and orange",
+  soundDesign: "Atmospheric city noise",
+  transition: "Cut",
+  ...template
   }));
 }
 

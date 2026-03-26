@@ -1,14 +1,14 @@
 :root {
-  --bg: #f5efe5;
-  --surface: rgba(255, 248, 237, 0.72);
-  --surface-strong: rgba(255, 248, 237, 0.92);
-  --text: #1a1916;
-  --muted: #5d554b;
-  --line: rgba(47, 41, 33, 0.14);
-  --accent: #b24a18;
-  --accent-soft: #f4bb7a;
-  --ink: #112033;
-  --shadow: 0 24px 60px rgba(38, 26, 15, 0.16);
+  --bg: #0b0f19;
+  --surface: rgba(17, 24, 39, 0.75);
+  --surface-strong: rgba(17, 24, 39, 0.95);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #7c3aed;
+  --accent-soft: #22d3ee;
+  --ink: #e5e7eb;
+  --shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -25,9 +25,9 @@ body {
   font-family: "Avenir Next", "Trebuchet MS", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(244, 187, 122, 0.5), transparent 30%),
-    radial-gradient(circle at top right, rgba(83, 149, 168, 0.18), transparent 32%),
-    linear-gradient(160deg, #f7f2e9 0%, #f1e8db 40%, #e7d7c3 100%);
+      radial-gradient(circle at top left, rgba(124, 58, 237, 0.25), transparent 30%),
+      radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 32%),
+      linear-gradient(160deg, #020617 0%, #020617 40%, #020617 100%);
   overflow-x: hidden;
 }
 
@@ -186,10 +186,11 @@ textarea:focus {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #b24a18, #d97706);
+  background: linear-gradient(135deg, #7c3aed, #22d3ee);
   color: white;
-  box-shadow: 0 14px 28px rgba(178, 74, 24, 0.28);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
 }
+
 
 .ghost-btn {
   background: rgba(17, 32, 51, 0.08);
@@ -382,7 +383,7 @@ textarea:focus {
 .shot-card {
   border-radius: 1.2rem;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.74);
+  background: rgba(17, 24, 39, 0.85);
 }
 
 .shot-frame {

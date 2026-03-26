@@ -187,6 +187,21 @@ function renderStory(story, warning) {
           shotTags.append(tag);
         });
 
+        const extraTags = [
+    `Duration: ${shot.shotDuration}`,
+    `Lens: ${shot.cameraLens}`,
+    `Music: ${shot.backgroundMusic}`,
+    `Color: ${shot.colorGrade}`
+  ];
+
+  extraTags.forEach((value) => {
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = value;
+    shotTags.append(tag);
+  });
+
+
         shotGrid.append(shotNode);
       });
 

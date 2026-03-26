@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auto-Director</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="ambient ambient-left"></div>
@@ -13,12 +14,12 @@
     <main class="shell">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Hackathon Brief / The Auto-Director</p>
-          <h1>Turn one line into a cinematic storyboard feed.</h1>
+          <p class="eyebrow">Aryan's Auto-Director</p>
+          <h1>Ready to turn one line into a cinematic storyboard feed?</h1>
           <p class="lede">
-            A single prompt becomes a 3-act narrative, a 9-scene structure, and a visual
-            shot-by-shot reel with screenwriter, cinematographer, and visual artist passes.
-          </p>
+             Auto-Director turns a single idea into a complete film plan — story structure,
+  scene breakdown, camera directions, shot list, color grading, music style,
+  and AI-generated visuals.
           <div class="mode-strip" id="modeStrip">
             <span class="mode-pill">Text agent: checking</span>
             <span class="mode-pill">Visual artist: checking</span>
@@ -26,7 +27,7 @@
         </div>
 
         <div class="prompt-card">
-          <label class="prompt-label" for="promptInput">Seed idea</label>
+          <label class="prompt-label" for="promptInput">Enter Film Idea</label>
           <textarea
             id="promptInput"
             rows="4"
@@ -35,7 +36,7 @@
           ></textarea>
 
           <div class="action-row">
-            <button id="generateBtn" class="primary-btn">Direct the story</button>
+            <button id="generateBtn" class="primary-btn">Generate Film Plan</button>
             <button id="demoBtn" class="ghost-btn" type="button">Load example</button>
           </div>
 
